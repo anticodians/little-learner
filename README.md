@@ -1,6 +1,6 @@
 # Reading Notes for *The Little Learner*
 
-We the [anticodians](https://anticodians.org) are reading *The Little Learner*, to unveil the mysteries of artificial intelligence, and enrich our how natural intelligence.
+We the [anticodians](https://anticodians.org) are reading *The Little Learner*, to unveil the mysteries of artificial intelligence, and enrich our own natural intelligence.
 
 This repository contains our Racket scratchpads from our reading.
 
