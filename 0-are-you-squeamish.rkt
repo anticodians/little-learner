@@ -25,3 +25,31 @@
 (define add3
   (lambda (x)
     (+ 3 x)))
+
+(define abs
+  (lambda (x)
+    (cond
+      ((< x 0) (- 0 x))
+      (else x))))
+
+(define silly-abs
+  (lambda (x)
+    (let ((x-is-negative (< x 0)))
+      (cond
+        (x-is-negative (- 0 x))
+        (else x)))))
+
+(define remainder
+  (lambda (x y)
+    (cond
+      ((< x y) x) ; base case
+      (else       ; recursive case
+       (remainder (- x y) y)))))
+
+(define add
+  (lambda (n m)
+    (cond
+      ((zero? m) n) ; base case
+      (else (add1
+             (add n (sub1 m)) ; 'recursive invocation'
+             )))))
