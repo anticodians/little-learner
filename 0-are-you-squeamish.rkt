@@ -1,4 +1,10 @@
 #lang racket
+
+; Chapter 0: Are you Squeamish?
+
+; This chapter contains an *extremely* concise introduction
+; to Racket and recursive functions.
+
 (define pie 3.14)
 
 (define a-radius 8.4)
@@ -50,6 +56,6 @@
   (lambda (n m)
     (cond
       ((zero? m) n) ; base case
-      (else (add1
+      (else (add1 ; wrapper
              (add n (sub1 m)) ; 'recursive invocation'
              )))))
