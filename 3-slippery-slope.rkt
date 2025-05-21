@@ -35,20 +35,35 @@
             (- ys pred-ys))))))))
 
 ; Expectant function for line
-(define l2-loss-line (l2-loss line))
+; The expectant function knows what function
+; we are trying to 'learn', but doesn't know
+; the data
+(define expectant-function (l2-loss line))
 
-; Objective function for line function with given data
-(display "l2-loss initial theta for line with our data:")
+; Objective function for line, x and y
+; The objective function knows what function
+; we are tyring to 'learn', and has out training
+; data available. But it does not know our latest guess
+; for the function parameters.
+(define objective-function (expectant-function line-xs line-ys))
+
+; Now we can apply our objective function to
+; a given guess for theta, to see how good
+; our current guess is:
+(display "l2-loss for our first guess for theta, (0.0 0.0):")
 (newline)
 (((l2-loss line) line-xs line-ys)
  (list 0.0 0.0))
+(display "or, using our pre-defined `objective-function`:")
+(newline)
+(objective-function (list 0.0 0.0))
 
 (display "l2-loss with better guess")
 (newline)
 (((l2-loss line) line-xs line-ys)
  (list 0.0099 0.0))
 
-(display "Could we try revising by the absolute value of the rate of change")
+(display "Could we try revising by the absolute value of the rate of change?")
 (newline)
 (((l2-loss line) line-xs line-ys)
  (list (+ (abs -62.63) 0.0099) 0.0))
